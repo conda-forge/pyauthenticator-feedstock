@@ -1,5 +1,5 @@
 {% set name = "pyauthenticator" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 
 package:
@@ -8,13 +8,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyauthenticator-{{ version }}.tar.gz
-  sha256: 778fe27f520212b6808292dbb924edb3e5d2c2f0be646a799dd7e060852d1c93
+  sha256: 481f08b69b9d09ad15b052ac73b104b801ee8021eea49c92d06832e53c186950
 
 build:
   number: 0
   noarch: python
   entry_points:
-    - pyauthenticator=pyauthenticator.cmd:main
+    - pyauthenticator=pyauthenticator:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
