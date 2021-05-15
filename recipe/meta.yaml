@@ -1,5 +1,5 @@
 {% set name = "pyauthenticator" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyauthenticator-{{ version }}.tar.gz
-  sha256: 481f08b69b9d09ad15b052ac73b104b801ee8021eea49c92d06832e53c186950
+  sha256: 97a35933f652bf717d0d56ff28eb419b7901ec94af2108b6b8cc168a88f84893
 
 build:
   number: 0
@@ -22,12 +22,12 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - otpauth
-    - pillow
+    - otpauth >=1.0.1
+    - pillow >=8.1.2
     - python >=3.6
-    - pyzbar
-    - qrcode
-    - zbar
+    - pyzbar >=0.1.8
+    - qrcode >=6.1
+    - zbar >=0.10
 
 test:
   imports:
