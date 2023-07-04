@@ -43,7 +43,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Similar to the Google authenticator just written in Python.'
+  summary: Similar to the Google authenticator just written in Python.
   description: |
     Similar to the Google authenticator just written in Python. With more 
     and more services requiring two factor authentication without 
