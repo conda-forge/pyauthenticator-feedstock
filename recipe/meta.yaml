@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyauthenticator-{{ version }}.tar.gz
   sha256: 1efa76acbbc124950501d2e812fb9f84d28be9c4ec1cb0a4f323a0006b7464f5
+  patches:
+    - versioneer.patch
 
 build:
   entry_points:
