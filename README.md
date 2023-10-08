@@ -7,19 +7,7 @@ Home: https://github.com/jan-janssen/pyauthenticator
 
 Package license: BSD-3-Clause
 
-Summary: Similar to the Google authenticator just written in Python.
-
-Development: https://github.com/jan-janssen/pyauthenticator
-
-Documentation: https://github.com/jan-janssen/pyauthenticator
-
-Similar to the Google authenticator just written in Python. With more
-and more services requiring two factor authentication without
-supporting application specific passwords or other forms of token
-based authenication suitable for automation this python packages
-allows to generate two factor authentication codes on the commandline
-or in python.
-
+Summary: Similar to the Google authenticator just written in python.
 
 Current build status
 ====================
