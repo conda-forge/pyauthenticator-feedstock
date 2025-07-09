@@ -1,5 +1,5 @@
 {% set name = "pyauthenticator" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,28 +7,27 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyauthenticator-{{ version }}.tar.gz
-  sha256: 1efa76acbbc124950501d2e812fb9f84d28be9c4ec1cb0a4f323a0006b7464f5
-  patches:
-    - versioneer.patch
+  sha256: a927a361f785073ba92b1ed6a2029170ec55918252e82381560a2bb26b136e46
 
 build:
   entry_points:
     - pyauthenticator=pyauthenticator.__main__:command_line_parser
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - hatchling
+    - hatch-vcs
   run:
     - python >={{ python_min }}
-    - pyotp >=2.6.0
-    - qrcode >=7.4.2
+    - pyotp >=2.9.0
+    - qrcode >=8.2
     - pyzbar >=0.1.9
-    - pillow >=10.0.0
+    - pillow >=11.3.0
 
 test:
   imports:
