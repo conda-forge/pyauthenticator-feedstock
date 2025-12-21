@@ -1,5 +1,5 @@
 {% set name = "pyauthenticator" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyauthenticator-{{ version }}.tar.gz
-  sha256: a927a361f785073ba92b1ed6a2029170ec55918252e82381560a2bb26b136e46
+  sha256: 8b6fe1f90fbcfa1d2033e25139e5479ab083fbbf1c4337a8ca6dddfc0dfd3e97
 
 build:
   entry_points:
