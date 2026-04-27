@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: pyauthenticator
+  version: "0.3.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyauthenticator-${{ version }}.tar.gz
+  sha256: 8b6fe1f90fbcfa1d2033e25139e5479ab083fbbf1c4337a8ca6dddfc0dfd3e97
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - pyauthenticator=pyauthenticator.__main__:command_line_parser
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling
+    - hatch-vcs
+  run:
+    - python >=${{ python_min }}
+    - pyotp >=2.9.0
+    - qrcode >=8.2
+    - pyzbar >=0.1.9
+    - pillow >=11.3.0
+
+tests:
+  - python:
+      imports:
+        - pyauthenticator
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pyauthenticator --help
+
+about:
+  summary: Similar to the Google authenticator just written in python.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/jan-janssen/pyauthenticator
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
